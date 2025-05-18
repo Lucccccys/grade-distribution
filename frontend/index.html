@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grade Distribution Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Grade Distribution Assistant</h1>
+
+  <!-- Upload Syllabus -->
+  <section id="upload-section">
+    <h2>Upload your Syllabus</h2>
+    <input type="file" id="syllabus-file" accept=".txt,.md" />
+    <button id="analyze-dist-btn">Analyze Grade Distribution</button>
+  </section>
+
+  <!-- Analysis Result Display -->
+  <section id="distribution-section" style="display:none">
+    <h2>Grade Distribution Details</h2>
+    <table id="dist-table">
+      <thead><tr><th>Item</th><th>Weight (%)</th><th>Max Score</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <!-- Grade Calculator -->
+  <section id="calculator-section" style="display:none">
+    <h2>Target Score Calculator</h2>
+    <label>Current Total Score：<input type="number" id="current-score" /></label><br/>
+    <label>Final Target Score<input type="number" id="target-score" /></label><br/>
+    <button id="calc-required-btn">Calculate Required Scores</button>
+
+    <div id="required-results"></div>
+  </section>
+
+  <!-- Study/Review Plan -->
+  <section id="plan-section" style="display:none">
+    <h2>Study/Review Plan</h2>
+    <div id="study-plan"></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

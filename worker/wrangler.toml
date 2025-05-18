@@ -1,0 +1,8 @@
+# wrangler.toml
+name = "grade-proxy"
+main = "index.js" 
+compatibility_date = "2025-05-18"       
+workers_dev = true
+
+[vars]
+OPENAI_API_KEY = "$OPENAI_API_KEY"
