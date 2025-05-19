@@ -1,4 +1,4 @@
-const CHATGPT_API_URL = 'https://grade-proxy.<Workers subdomain>.workers.dev/openai/chat-completions';
+const CHATGPT_API_URL = 'https://grade-proxy.grade-distribution.workers.dev/openai/chat-completions';
 
 document.getElementById('analyze-dist-btn').addEventListener('click', async () => {
   const fileInput = document.getElementById('syllabus-file');
