@@ -1,25 +1,25 @@
+# .github/workflows/pages.yml
 name: Deploy frontend to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+
+permissions:
+  contents: read     # needed to fetch your code
+  pages: write       # needed to push to Pages
+  id-token: write    # required by deploy-pages
 
 jobs:
   deploy-frontend:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
 
     steps:
       - uses: actions/checkout@v3
-
-      - name: Upload frontend artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: frontend
-
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1
+        with:
+          # tell it where your final HTML/CSS/JS lives:
+          source-dir: frontend
+          # GitHub_TOKEN is automatically provided
+          token: ${{ secrets.GITHUB_TOKEN }}
